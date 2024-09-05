@@ -1,0 +1,295 @@
+/* - - - - - - - - - - MAIN - - - - - - - - - - */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #FEFAF6;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 62.5%;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  font-size: 1.8em;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+header, footer {
+  background-color: #DAC0A3;
+  margin: 0;
+  padding: 1em 2em;
+  text-align: center;
+  width: 100%;
+}
+
+.footer--container {
+  padding: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer--link {
+  font-size: 1.4em;
+  padding: 0 0.5em;
+}
+
+
+/* - - - - - - - - - - TEXT - - - - - - - - - - */
+
+.header--title {
+  font-size: 2.4em;
+  letter-spacing: 0.1em;
+  margin: 0;
+}
+
+a {
+  color: #000;
+}
+
+  a:hover {
+    color: #102C57;
+  }
+
+  nav a,
+  footer a {
+    letter-spacing: 0.1em;
+    text-decoration: none;
+  }
+
+    nav a:hover,
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+p {
+  font-size: 1.6em;
+  margin: 0;
+}
+
+ul {
+  font-size: 1.6em;
+}
+
+.home--link {
+  font-size: 1.6rem;
+}
+
+.booking--container a {
+  display: block;
+  font-size: 1.6em;
+}
+
+  .booking--container a:hover {
+    color: #102C57;
+  }
+
+
+/* - - - - - - - - - - IMAGES - - - - - - - - - - */
+
+.home--img {
+  border-radius: 50%;
+  margin: 0 2em 2em 2em;
+  width: 100%;
+  max-height: 400px;
+  max-width: 400px;
+}
+
+.services--img {
+  border-radius: 10px;
+  width: 75%;
+}
+
+.stylist--img {
+  border-radius: 10px;
+}
+
+
+/* - - - - - - - - - - CONTAINERS - - - - - - - - - - */
+
+.root--container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.container {
+  background-color: #EADBC8;
+  font-size: 1.2em;
+  margin: 2em 0;
+  padding: 2em 4em;
+}
+
+.left--container {
+  border-radius: 0 10px 10px 0;
+  position: relative;
+  left: 0%;
+}
+
+.right--container {
+  border-radius: 10px 0 0 10px;
+  position: relative;
+  margin-left: 35%;
+}
+
+.home--container {
+  width: 65%;
+}
+
+.home--content {
+  border-top: 2px solid black;
+  padding-top: 2em;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+
+/* - - - - - - - - - - SERVICES - - - - - - - - - - */
+
+.services--container {
+  font-size: 1.8em;
+  padding: 4em 6em;
+}
+
+.services--row {
+  margin-bottom: 4em;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.services--card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 30%;
+}
+
+table {
+  margin-top: 1em;
+  width: 75%;
+}
+
+  table tbody tr:nth-child(odd) {
+    background-color: #EADBC8;
+  }
+
+tbody {
+  height: 200px;
+}
+
+tr {
+  border-bottom: 1px solid black;
+}
+
+td {
+  padding: 0.5em;
+}
+
+.services--special-desc {
+  background-color: #FEFAF6;
+}
+
+.services--special {
+  font-size: 0.7em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.services--link {
+  background-color: #DAC0A3;
+  border: 2px solid black;
+  border-radius: 10px;
+  font-size: 1.2em;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  margin-top: 2em;
+  padding: 0.5em;
+  text-align: center;
+  text-decoration: none;
+  width: 50%;
+}
+
+  .services--link:hover {
+    background-color: #EADBC8;
+  }
+
+
+/* - - - - - - - - - - STAFF - - - - - - - - - - */
+
+.staff--container {
+  display: flex;
+  flex-direction: column;
+  width: 65%;
+}
+
+.staff--info {
+  display: flex;
+}
+
+
+/* - - - - - - - - - - BOOKING - - - - - - - - - - */
+
+.booking--container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.booking--contact--container {
+  width: 50%;
+}
+
+.booking--contact-info {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2em;
+  padding: 1em;
+  text-align: center;
+}
+
+
+/* - - - - - - - - - - FORM - - - - - - - - - - */
+
+form {
+  font-size: 1.6em;
+  margin: auto;
+  padding: 2em;
+  width: 30em;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+label {
+  margin-top: 1em;
+}
+
+input, select {
+  width: 100%;
+}
+
+.submit-btn {
+  background-color: #EADBC8;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  margin: 1em 0;
+  padding: 0.5em 3em;
+  width: 100%;
+}
+
+  .submit-btn:hover {
+    background-color: #DAC0A3;
+    color: #102C57;
+  }
+
+
