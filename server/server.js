@@ -17,6 +17,10 @@ mongoose.connect(process.env.DB_STRING)
   .then(() => { console.log("Connected successfully.") })
   .catch((err) => { console.error("Error: ", err) });
 
+app.get("/", (req, res) => {
+  res.json("Salon API is running.");
+});
+
 app.use("/api/bookings", bookingRoutes);
 
 app.listen(process.env.PORT, () => {
