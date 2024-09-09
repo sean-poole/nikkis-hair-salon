@@ -8,10 +8,11 @@ const bookingRoutes = require("./routes/bookings");
 
 const app = express();
 app.use(cors({
-  origin: ["https://nikkis-hair-salon-server.vercel.app"],
+  origin: ["https://nikkis-hair-salon.vercel.app"],
   methods: "GET,POST,DELETE",
   credentials: true
 }));
+app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 mongoose.connect(process.env.DB_STRING)
