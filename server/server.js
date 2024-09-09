@@ -6,7 +6,11 @@ require("dotenv").config({ path: "./config/.env" });
 const bookingRoutes = require("./routes/bookings");
 
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin: ["https://nikkis-hair-salon.vercel.app/"],
+  methods: ["GET", "POST", "DELETE"],
+  credentials: true
+}));
 app.use(express.json());
 
 mongoose.connect(process.env.DB_STRING)
