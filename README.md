@@ -1,4 +1,4 @@
-# 💈 Nikki's Hair Salon 💈
+# 💈 Nikki's Hair Salon 💈 | <a href="https://nikkis-hair-salon.vercel.app/" target="_blank">Visit Here</a>
 
 <p align="center">
   <img src="https://github.com/sean-poole/nikkis-hair-salon/blob/main/preview-images/salon-preview.jpg" width="100%" alt="Nikki's Beauty Salon preview image">
