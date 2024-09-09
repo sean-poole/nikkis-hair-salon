@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 // require("dotenv").config({ path: "./config/.env" });
 require("dotenv").config();
 
-const bookingRoutes = require("./routes/bookings");
+const bookingRoutes = require("../routes/bookings");
 
 const app = express();
 app.use(cors({
