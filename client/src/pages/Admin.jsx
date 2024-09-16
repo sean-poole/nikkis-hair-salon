@@ -1,9 +1,16 @@
 import { useState, useEffect } from "react";
+// import { useLocation } from "react-router-dom";
 
 const url = import.meta.env.VITE_API_URL;
 
 export default function Admin() {
   const [bookings, setBookings] = useState([]);
+
+  // const pathname = useLocation();
+
+  // useEffect(() => {
+  //   window.scrollTo(0, 0);
+  // }, [pathname]);
 
   useEffect(() => {
     const fetchBookings = async () => {

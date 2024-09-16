@@ -1,6 +1,13 @@
-
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 export default function Staff() {
+  const pathname = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
   return (
     <div className="main--container">
       <div className="container right--container staff--container">
