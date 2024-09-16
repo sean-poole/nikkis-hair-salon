@@ -1,16 +1,16 @@
 import { useState, useEffect } from "react";
-// import { useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 const url = import.meta.env.VITE_API_URL;
 
 export default function Admin() {
   const [bookings, setBookings] = useState([]);
 
-  // const pathname = useLocation();
+  const pathname = useLocation();
 
-  // useEffect(() => {
-  //   window.scrollTo(0, 0);
-  // }, [pathname]);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
 
   useEffect(() => {
     const fetchBookings = async () => {
@@ -22,6 +22,7 @@ export default function Admin() {
         }
 
         const data = await response.json();
+        console.log(data);
         setBookings(data);
       } catch (err) {
         console.error("Failed to fetch data: ", err);
@@ -32,15 +33,35 @@ export default function Admin() {
   }, []);
 
   return (
-    <div>
+    <div className="main--container admin--container">
       <h2>Admin Dashboard</h2>
-      <ul>
-        { bookings.map((booking) => (
-          <li key={booking._id}>
-            { booking.name } - { booking.email } - { new Date(booking.date).toLocaleDateString() } - { booking.service } - { booking.stylist }
-          </li>
-        )) }
-      </ul>
+      <div className="admin--bookings">
+        <table>
+          <thead>
+            <tr className="table-headings">
+              <th>Name</th>
+              <th>Email</th>
+              <th>Date</th>
+              <th>Service</th>
+              <th>Stylist</th>
+              <th>Completed</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            { bookings.map((booking) => (
+              <tr key={booking._id}>
+                <td>{ booking.name }</td>
+                <td>{ booking.email }</td>
+                <td>{ new Date(booking.date).toLocaleDateString() }</td>
+                <td>{ booking.service }</td>
+                <td>{ booking.stylist }</td>
+                <td><button>Confirm</button></td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 }

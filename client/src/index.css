@@ -39,6 +39,27 @@ header, footer {
   padding: 0 0.5em;
 }
 
+table {
+  margin-top: 1em;
+  width: 75%;
+}
+
+  table tbody tr:nth-child(odd) {
+    background-color: #EADBC8;
+  }
+
+tbody {
+  height: 200px;
+}
+
+tr {
+  border-bottom: 1px solid black;
+}
+
+td {
+  padding: 0.5em;
+}
+
 
 /* - - - - - - - - - - TEXT - - - - - - - - - - */
 
@@ -170,27 +191,6 @@ ul {
   width: 30%;
 }
 
-table {
-  margin-top: 1em;
-  width: 75%;
-}
-
-  table tbody tr:nth-child(odd) {
-    background-color: #EADBC8;
-  }
-
-tbody {
-  height: 200px;
-}
-
-tr {
-  border-bottom: 1px solid black;
-}
-
-td {
-  padding: 0.5em;
-}
-
 .services--special-desc {
   background-color: #FEFAF6;
 }
@@ -293,3 +293,20 @@ input, select {
   }
 
 
+/* - - - - - - - - - - ADMIN - - - - - - - - - - */
+
+.admin--container {
+  border: 1px solid black;
+  padding: 4em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.admin--bookings {
+  font-size: 1.4em;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
