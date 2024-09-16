@@ -23,5 +23,22 @@ module.exports = {
       console.error("Error saving booking: ", err);
       res.status(500).json({ message: "Error creating booking." });
     }
+  },
+
+  deleteBooking: async (req, res) => {
+    const { id } = req.body;
+    
+    try {
+      const deletedBooking = await Booking.findByIdAndDelete(id);
+
+      if (!deletedBooking) {
+        return res.status(404).json({ message: "Booking not found." });
+      }
+
+      res.status(200).json({ message: "Booking successfully deleted." });
+    } catch(err) {
+      console.error("Error deleting booking: ", err);
+      res.status(500).json({ message: "Error deleting booking." });
+    }
   }
 }

@@ -5,6 +5,7 @@ const url = import.meta.env.VITE_API_URL;
 
 export default function Admin() {
   const [bookings, setBookings] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   const pathname = useLocation();
 
@@ -32,6 +33,38 @@ export default function Admin() {
     fetchBookings();
   }, []);
 
+  async function handleConfirm(id, name) {
+    const isConfirmed = confirm(`Are you sure you want to mark the appointment for ${name} as completed?`);
+
+    if (isConfirmed && !loading) {
+      setLoading(true);
+      try {
+        const response = await fetch(`${url}/api/bookings/deleteBooking`, {
+          method: "DELETE",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({ id })
+        });
+
+        if (!response.ok) {
+          throw new Error("Network response failed.");
+        }
+
+        alert(`The appointment for ${name} has successfully been removed.`);
+
+        setBookings((prevBookings) => 
+          prevBookings.filter((booking) => booking._id !== id)
+        );
+        setLoading(false);
+      } catch(err) {
+        alert(`An error occurred while removing the appointment for ${name}. Please try again.`);
+        console.error("Error deleting completed appointment: ", err);
+        setLoading(false);
+      }
+    }
+  }
+
   return (
     <div className="main--container admin--container">
       <h2>Admin Dashboard</h2>
@@ -55,8 +88,16 @@ export default function Admin() {
                 <td>{ booking.email }</td>
                 <td>{ new Date(booking.date).toLocaleDateString() }</td>
                 <td>{ booking.service }</td>
-                <td>{ booking.stylist }</td>
-                <td><button>Confirm</button></td>
+                <td>{ booking.stylist ? booking.stylist : "Not specified" }</td>
+                <td className="text-center">
+                  <button 
+                    className="delete-btn"
+                    onClick={() => handleConfirm(booking._id, booking.name)}
+                    disabled={loading}
+                  >
+                    { loading ? "Processing..." : "Confirm" }
+                  </button>
+                </td>
               </tr>
             ))}
           </tbody>
