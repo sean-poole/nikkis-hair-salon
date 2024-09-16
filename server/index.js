@@ -8,7 +8,7 @@ const bookingRoutes = require("./routes/bookings");
 
 const app = express();
 app.use(cors({
-  origin: ["https://nikkis-hair-salon.vercel.app"],
+  origin: ["https://nikkis-hair-salon.vercel.app", `http://localhost:${process.env.CLIENT_PORT}`],
   methods: "GET,POST,DELETE",
   credentials: true
 }));
